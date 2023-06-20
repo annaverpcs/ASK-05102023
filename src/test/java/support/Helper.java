@@ -11,7 +11,7 @@ import java.net.URL;
 import java.sql.*;
 
 public class Helper {
-    static final String DB_URL = "jdbc:mysql://44.205.92.189:3307/application?autoReconnect=true&useSSL=false";
+    static final String DB_URL = "jdbc:mysql://44.192.118.20:3306/application?autoReconnect=true&useSSL=false";
     static final String USER = "testuser";
     static final String PASS = "password";
     public static String getAccessToken(String userEmail) throws SQLException {
@@ -30,7 +30,7 @@ public class Helper {
         return result;
     }
     public static void activateUser(int userId, String activationCode) throws IOException {
-        URL url = new URL("http://ask-stage.portnov.com/api/v1/activate/" + userId + "/" + activationCode);
+        URL url = new URL("http://ask-int.portnov.com/api/v1/activate/" + userId + "/" + activationCode);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
         con.setRequestProperty("User-Agent", "USER_AGENT");
