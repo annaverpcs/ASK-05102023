@@ -42,14 +42,17 @@
   @asktest2
   Scenario: Student registration
     Given I open url "http://ask-int.portnov.com/#/registration"
-    And I type "First" into element with xpath "//input[@formcontrolname='firstName']"
-    And I type "Last" into element with xpath "//input[@formcontrolname='lastName']"
-    And I type "email@email.com" into element with xpath "//input[@formcontrolname='email']"
+    And I type "N" into element with xpath "//input[@formcontrolname='firstName']"
+    And I type "K" into element with xpath "//input[@formcontrolname='lastName']"
+    And I type "nk@email.com" into element with xpath "//input[@formcontrolname='email']"
     And I type "ABC" into element with xpath "//input[@formcontrolname='group']"
     And I type "12345" into element with xpath "//input[@formcontrolname='password']"
     And I type "12345" into element with xpath "//input[@formcontrolname='confirmPassword']"
     Then I click on element with xpath "//span[contains(text(),'Register Me')]"
-    Then AV retrieve information from db for email "email@email.com"
+    Then NK retrieve information from db for email "nk@email.com"
+    Then NK activate the user
+    #Then NK retrieve information from db for email "email@email.com"
+
 
 
 
