@@ -11,7 +11,7 @@ import java.net.URL;
 import java.sql.*;
 
 public class Helper {
-    static final String DB_URL = "jdbc:mysql://44.205.92.189:3307/application?autoReconnect=true&useSSL=false";
+    static final String DB_URL = "jdbc:mysql://44.192.118.20:3306/application?autoReconnect=true&useSSL=false";
     static final String USER = "testuser";
     static final String PASS = "password";
     public static String getAccessToken(String userEmail) throws SQLException {
