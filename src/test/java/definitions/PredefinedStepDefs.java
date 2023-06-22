@@ -221,4 +221,24 @@ public class PredefinedStepDefs {
     public void iMouseOverElementWithXpath(String xpath) {
         new Actions(getDriver()).moveToElement(getDriver().findElement(By.xpath(xpath))).perform();
     }
+
+    @Then("AV retrieve information from db for email qwe@mail.com")
+    public void avRetrieveInformationFromDbForEmailQweMailCom() {
+    }
+
+
+
+    @Then("I move slider {int} step {string} for xpath {string}")
+    public void iMoveSliderStepRightForXpath(int numberOfSteps, String direction, String sliderXpath) {
+        for (int i = 0; i<numberOfSteps; i++) {
+            if (direction.equals("right")) {
+                getDriver().findElement(By.xpath(sliderXpath)).sendKeys(Keys.ARROW_RIGHT);
+            }
+            if (direction.equals("left")) {
+                getDriver().findElement(By.xpath(sliderXpath)).sendKeys(Keys.ARROW_LEFT);
+            } else {
+                System.out.println("Error: Unknown direction for slider");
+            }
+        }
+    }
 }
