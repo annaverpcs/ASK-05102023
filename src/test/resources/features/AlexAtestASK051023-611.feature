@@ -14,10 +14,13 @@ Feature: ASK application testing
     Then I click on element with xpath "//h5[contains(text(),'My Assignments')]"
     Then element with xpath "//h4[contains(text(),'My Assignments')]" should be present
     And I wait for 1 sec
-    And I click on element with xpath "(//span[@class='mat-button-wrapper'])[1]"
+    And I click on element with xpath "(//span[@class='mat-button-wrapper'])[2]"
     Then element with xpath "//h4[contains(text(),'02 Anna API Test Quiz')]" should be present
     Then I click on element with xpath "(//label[@class='mat-radio-label'])[1]"
-    Then element with xpath "(//div[@class='mat-radio-outer-circle'])[1]" should be selected
+    Then element with xpath "(//input[@type='radio'])[1]" should be selected
+    Then I click on element with xpath "(//label[@class='mat-radio-label'])[2]"
+    And element with xpath "(//input[@type='radio'])[1]" should not be selected
+    And I wait for 2 sec
 
 
   @predefined2
