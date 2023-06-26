@@ -34,7 +34,7 @@ Feature: User registration
       And KY type "dragonrider97213@aelup.com" into field "Email *"
       And KY type "passwordTestKY" into field "Password *"
       And KY click on button "Sign In"
-      And I wait for 5 sec
+      And I wait for 7 sec
       
       Then element with xpath "//div[@class='info']/h3" should contain text "FirstNameTestKY LastNameTestKY"
       And element with xpath "//div[@class='info']/p" should contain text "STUDENT"
