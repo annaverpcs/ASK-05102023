@@ -221,13 +221,6 @@ public class PredefinedStepDefs {
     public void iMouseOverElementWithXpath(String xpath) {
         new Actions(getDriver()).moveToElement(getDriver().findElement(By.xpath(xpath))).perform();
     }
-
-    @Then("AV retrieve information from db for email qwe@mail.com")
-    public void avRetrieveInformationFromDbForEmailQweMailCom() {
-    }
-
-
-
     @Then("I move slider {int} step {string} for xpath {string}")
     public void iMoveSliderStepRightForXpath(int numberOfSteps, String direction, String sliderXpath) {
         for (int i = 0; i<numberOfSteps; i++) {
