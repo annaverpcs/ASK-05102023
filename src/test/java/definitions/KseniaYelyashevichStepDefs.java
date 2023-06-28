@@ -34,10 +34,6 @@ public class KseniaYelyashevichStepDefs {
 
         assertThat(sAccessToken).isNotEmpty();
         // ? should I add some more assertions
-
-//        System.out.println("sAccessToken: " + sAccessToken);
-//        System.out.println("iUserId: " + iUserId);
-//        System.out.println("sActivationCode: " + sActivationCode);
     }
 
 
@@ -84,7 +80,7 @@ public class KseniaYelyashevichStepDefs {
                 getDriver().findElement(By.xpath(KseniaYelyashevichXPathLibrary.sSaveQuizButton)).click();
                 break;
             default:
-                System.out.println("");
+                System.out.println("Name of the button provided is not detected, it should be either \"Register Now\", \"Register Me\", \"Sign In\", \"Create New Quiz\", \"Add Question\", \"Save Quiz\"");
         }
 
     }
@@ -159,7 +155,4 @@ public class KseniaYelyashevichStepDefs {
 
         }
     }
-
-
-
 }

@@ -38,8 +38,6 @@ public class KseniaYelyashevichXPathLibrary {
 
     //Quizzes page
     public static String sCreateNewQuizButton = "//span[contains(text(), 'Create New Quiz')]/ancestor::button";
-    // public static String sAllQuizzesInfo = "//mat-accordion//span[@class='mat-content']";
-    // public static String sAllQuizzesInfo = "//mat-accordion//mat-expansion-panel";
     public static String sAllQuizzesInfo = "//mat-expansion-panel";
     public static String sQuizTitleText = ".//mat-panel-title"; // used to get title of the quiz (selected from all quizzes that were found by the locator above)
     public static String sQuizDescription = ".//mat-panel-description"; //used to get info about number of questions in quiz selected before
@@ -82,7 +80,9 @@ public class KseniaYelyashevichXPathLibrary {
     //the next locator is to select correct answer in Multiple-Choice questions
     public static String sQuestionOptionCheckboxes = "//textarea[@formcontrolname='option']//ancestor::mat-form-field/../mat-checkbox";
     public static String sShowStopperCheckbox = ".//span[contains(text(), 'Show-Stopper')]";
+    public static String sShowStopperCheckboxStatus = ".//span[contains(text(), 'Show-Stopper')]//ancestor::mat-checkbox//input";
     public static String sSaveQuizButton = "//div[@class='controls']//span[contains(text(), 'Save')]";
+    //the next locator is used to verify, that checkbox "
 
 
 

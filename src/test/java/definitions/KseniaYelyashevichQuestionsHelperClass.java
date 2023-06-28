@@ -1,7 +1,7 @@
-// helper-class used for question setup in quiz
+// helper-class with methods to create a new quiz
 // created by: Ksenia Yelyashevich
 
-// before using any other method from this class 2 main methods should be called:
+// before using any method from this class 2 main methods should be called firstly:
 // 1) kySelectQuestionToSetup - to select (and expand it, if needed) a specific question by it's number
 // 2) kySetQuestionTypeAs - to setup a type of question selected (it should be either 'Single-Choice', 'Multiple-Choice' or 'Textual')
 
@@ -15,14 +15,14 @@
 
 
 package definitions;
-
-import cucumber.api.java.en.And;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import java.util.List;
 import static support.TestContext.getDriver;
 import org.openqa.selenium.Keys;
+import static org.assertj.core.api.Assertions.assertThat;
 
 
 public class KseniaYelyashevichQuestionsHelperClass {
@@ -40,7 +40,7 @@ public class KseniaYelyashevichQuestionsHelperClass {
         String expansionValue = allQuestionsExpansionPanels.get(questionNum - 1).getAttribute("aria-expanded");
         if (expansionValue.equals("false")) {
             allQuestionsExpansionPanels.get(questionNum - 1).click();
-            getDriver().wait(2);
+            Thread.sleep(2000);
         }
 
         // then get all elements from the form with settings for the specific question
@@ -149,6 +149,20 @@ public class KseniaYelyashevichQuestionsHelperClass {
     public void kySetQuestionAsShowStopper() {
         questionFormNeeded.findElement(By.xpath(KseniaYelyashevichXPathLibrary.sShowStopperCheckbox)).click();
         // ? should I add some assertion
+    }
+
+    @Then("KY verify that question is checked as \"Show-Stopper\"")
+    public void kyVerifyQuestionIsCheckedAsShowStopper(){
+        WebElement showStopperCheckbox = questionFormNeeded.findElement(By.xpath(KseniaYelyashevichXPathLibrary.sShowStopperCheckboxStatus));
+        String isChecked = showStopperCheckbox.getAttribute("aria-checked");
+        assertThat(isChecked).isEqualTo("true");
+    }
+
+    @Then("KY verify that question is not checked as \"Show-stopper\"")
+    public void kyVerifyQuestionIsNotCheckedAsShowStopper(){
+        WebElement showStopperCheckbox = questionFormNeeded.findElement(By.xpath(KseniaYelyashevichXPathLibrary.sShowStopperCheckboxStatus));
+        String isChecked = showStopperCheckbox.getAttribute("aria-checked");
+        assertThat(isChecked).isEqualTo("false");
     }
 
 }
